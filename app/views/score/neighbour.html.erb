@@ -1,0 +1,19 @@
+<%if @user_node.present? %>
+	<% counter = 0 %>
+	Rank: User_id, Score
+	<% @list_up.each do |item| %>
+	<p>	<%= counter = counter + 1 %>: <%= item.user_id %> ,  <%= item.score %>  </p>
+		<br>
+	<%end%>
+
+	<p>	<b><%= counter = counter + 1 %>: <%= @user_node.user_id %> ,  <%= @user_node.score %> </b> </p>
+	<br>
+
+	<% @list_down.each do |item| %>
+	<p>	<%= counter = counter + 1 %>: <%= item.user_id %> ,  <%= item.score %>  </p>
+		<br>
+	<%end%>
+
+<% else %>
+"No results found"
+<% end%>

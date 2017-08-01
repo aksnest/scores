@@ -1,0 +1,11 @@
+<%if @list.present? %>
+	<% counter = 0 %>
+	Rank: User_id, Score
+	<% @list.each do |item| %>
+	<p>	<%= counter = counter + 1 %>: <%= item.user_id %> ,  <%= item.score %>  </p>
+		<br>
+	<%end%>
+
+<% else %>
+"No results found"
+<% end%>
