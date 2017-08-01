@@ -92,7 +92,7 @@ class ScoreController < ApplicationController
   	return if node == nil
   	
   	while n1 > 0 && node!=nil
-  		node = node.next
+  		node = node.prev
   		@list_up.push(node) if node != nil
   		n1 = n1 - 1
   		n1 = n1 + 1 if node == nil
@@ -101,7 +101,7 @@ class ScoreController < ApplicationController
   	
   	node = $user_map[user_id]
   	while n2 > 0 && node!=nil
-  		node = node.prev
+  		node = node.next
   		@list_down.push(node) if node != nil
   		n2 = n2 - 1
   		n2 = n2 + 1 if node == nil
