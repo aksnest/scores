@@ -1,7 +1,8 @@
 class ScoreController < ApplicationController
   
   $score_bucket = Hash.new
-	for i in 0..5000
+  $max_score = 5000
+	for i in 0..$max_score
 		$score_bucket[i] = Score.new
 	end 
   
@@ -65,7 +66,7 @@ class ScoreController < ApplicationController
 
   def leaderboard
   	count = params["count"].to_i
-  	@list = down_neighbours(5000, count)
+  	@list = down_neighbours($max_score, count)
   end
 
   def get_score_list(score, count, top)
@@ -124,7 +125,7 @@ class ScoreController < ApplicationController
 
   def up_neighbours(score, count)
   	up_list = []
-  	while count >=0 && score<=5000
+  	while count >=0 && score<=$max_score
   		score_list = get_score_list(score, count, false)
   		count = count - score_list.size
   		up_list = up_list + score_list
