@@ -65,7 +65,6 @@ class ScoreController < ApplicationController
 
   def leaderboard
   	count = params["count"].to_i
-  	binding.pry
   	@list = down_neighbours(5000, count)
   end
 
