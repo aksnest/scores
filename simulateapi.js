@@ -1,8 +1,8 @@
 var request = require('request');
 
-for(var i=0; i <= 5000; i++) {
+for(var i=0; i <= 1000; i++) {
 	var user_id1 = i;
-	var user_id2 = 5000 + i;
+	var user_id2 = 1000 + i;
 	var score = i;
 
 	var string1 = "http://localhost:3000/score/add?user_id=" + user_id1.toString() + "&score=" + score.toString()
